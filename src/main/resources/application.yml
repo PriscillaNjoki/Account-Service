@@ -1,0 +1,47 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 8187
+
+spring:
+  application:
+   name: accounts-service
+  datasource:
+    url: jdbc:mariadb://localhost/accounts_db
+    username: root
+    password:
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: MySQL
+    database-platform: org.hibernate.dialect.MySQLDialect
+  springdoc:
+    swagger-ui:
+      path: /api-docs  # Set a custom path for Swagger UI (optional)
+      configurationUrl: "http://localhost:8181/api-docs"
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: priscillanjoki23@gmail.com
+    password: yqva cekw dwhr mjsn
+    properties:
+        mail:
+          smtp:
+            auth: true
+            starttls:
+              enable: true
+
+  users:
+    app:
+    client:
+      origin: http://localhost:4200/
